@@ -16,14 +16,7 @@ namespace P02Biblioteka.Services
         private List<Zawodnik> zawodnicyCache;
         private const string url = "C:\\dane\\zawodnicy.txt";
 
-        public void Edytuj(Zawodnik edytowany)
-        {
-            for (int i = 0; i < zawodnicyCache.Count; i++)
-                if (zawodnicyCache[i].Id_zawodnika == edytowany.Id_zawodnika)
-                    zawodnicyCache[i] = edytowany;
-
-            Zapisz();
-        }
+ 
 
         public void Zapisz()
         {
@@ -114,16 +107,12 @@ namespace P02Biblioteka.Services
 
         public void Usun(int id_zawodnika)
         {
-            Zawodnik doUsunieca = null;
-            foreach (var z in zawodnicyCache)
-                if (z.Id_zawodnika == id_zawodnika)
-                {
-                    doUsunieca = z;
-                    break;
-                }
+          
+        }
 
-            zawodnicyCache.Remove(doUsunieca);
-            Zapisz();
+        public void Edytuj(Zawodnik edytowany)
+        {
+            
         }
 
         public void Dodaj(Zawodnik w)
