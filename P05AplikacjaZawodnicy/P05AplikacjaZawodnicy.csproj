@@ -33,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="P02Biblioteka, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\20Dzien5\P02Biblioteka\bin\Debug\P02Biblioteka.dll</HintPath>
-    </Reference>
     <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
     </Reference>
@@ -102,6 +98,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="zawodnicy.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\P02Biblioteka\P02Biblioteka.csproj">
+      <Project>{fa76fa6b-1b27-4759-a7e0-1db08693d9fc}</Project>
+      <Name>P02Biblioteka</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

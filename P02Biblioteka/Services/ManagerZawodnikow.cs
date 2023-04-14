@@ -105,14 +105,39 @@ namespace P02Biblioteka.Services
             return suma / zawodnicy.Length;
         }
 
+        // uzupełnij metodę usuń i edytuj tak aby dane były usuwane i edytowane z bazy danyh
+        // zrób zadanie analogizne do metody dodaj 
+
         public void Usun(int id_zawodnika)
         {
-          
+            PolaczenieZBaza pzb = new PolaczenieZBaza();
+
+            string szablon = "delete zawodnicy where id_zawodnika = {0}";
+
+            string sql = string.Format(szablon, id_zawodnika);
+
+            pzb.WyslijPolecenieSQL(sql);
+            WczytajZawodnikow();
         }
 
-        public void Edytuj(Zawodnik edytowany)
+        public void Edytuj(Zawodnik w)
         {
-            
+            PolaczenieZBaza pzb = new PolaczenieZBaza();
+
+            string szablon = @"update zawodnicy set 
+                                imie = '{0}', 
+                                nazwisko = '{1}',
+                                kraj='{2}',
+                                data_ur = '{3}',  
+                                wzrost = {4},
+                                waga = {5}
+                                where id_zawodnika = {6}";
+
+            string sql = string.Format(szablon,
+                w.Imie, w.Nazwisko, w.Kraj, w.DataUrodzenia.ToString("yyyyMMdd"), w.Wzrost, w.Waga, w.Id_zawodnika);
+
+            pzb.WyslijPolecenieSQL(sql);
+            WczytajZawodnikow();
         }
 
         public void Dodaj(Zawodnik w)
