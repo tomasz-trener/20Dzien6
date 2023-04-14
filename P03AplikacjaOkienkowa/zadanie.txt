@@ -1,0 +1,15 @@
+﻿
+
+Rozbuduj aplikację tak aby 
+
+1)
+dało się podać dowolny inny connnectionString. 
+Gdy pole z connstringiem jest puste to spytaj (jako messagebox) czy chcesz użyć domyślnych parametrów. 
+
+2) 
+gdy użytkownik wysyła polecenie sql puste (pusty textbox) to podaj stosowny komunikat z ostrzeżeniem 
+
+
+3) 
+Wynieś klasęPolaczeniezBaza do biblioteki i tym razem podłącz bibliotekę do projektu P03 
+
